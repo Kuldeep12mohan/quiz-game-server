@@ -1,11 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors"
 import { PrismaClient } from "@prisma/client";
 const client = new PrismaClient()
 dotenv.config({
   path: "./.env",
 });
 const app = express();
+app.use(cors());
 
 app.post("/create-quiz",async(req,res)=>{
   const quiz = await client.quiz.create({
