@@ -8,7 +8,9 @@ dotenv.config({
 const app = express();
 
 app.post("/create-quiz",async(req,res)=>{
-  const quiz = await client.quiz.create({});
+  const quiz = await client.quiz.create({
+    data:{}
+  });
   return res.json({quiz});
 })
 app.post("/add-problem", async(req, res) => {
