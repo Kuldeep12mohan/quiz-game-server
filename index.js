@@ -8,7 +8,7 @@ dotenv.config({
 });
 const app = express();
 app.use(cors());
-
+app.use(express.json());
 app.post("/create-quiz",async(req,res)=>{
   const quiz = await client.quiz.create({
     data:{}
