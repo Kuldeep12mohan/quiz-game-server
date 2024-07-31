@@ -17,6 +17,7 @@ app.post("/create-quiz",async(req,res)=>{
 })
 app.post("/add-problem", async(req, res) => {
   const body = req.body;//problem,quizId
+  console.log(body);
   const problem = await client.problem.create({
     data:{
       question:body.question,
